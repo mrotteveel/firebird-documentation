@@ -1,7 +1,7 @@
 [[wireprotocol]]
 = Firebird Wire Protocol
 Carlos Guzman Alvarez; Mark Rotteveel
-0.18, 18 May 2025
+0.19, TBD
 :doctype: book
 :sectnums:
 :sectanchors:
@@ -290,7 +290,7 @@ Same encoding as `p_resp_data` in response to a blob information request with al
 `Buffer` -- `p_blob_data`::
 Segmented blob data
 +
-Same encoding as `p_resp_data` in response to <<wireprotocol-blobs-getsegment>>).
+Same encoding as `p_resp_data` in response to <<wireprotocol-blobs-getsegment>>.
 
 The transaction handle (`p_tran_id`) and blob id (`p_blob_id`) can -- for example -- be used as a key to look up inline blobs from a local -- attachment specific -- cache when the client wants to open a blob.
 Instead of remotely opening the blob and retrieving data or information from the server, the client can then serve the data from the inline blob.
@@ -2857,7 +2857,7 @@ Firebird code sometimes sets _scale_ to `0` for `SQL_ARRAY` and `SQL_BLOB`.
 ===== Null type
 
 The null type, `SQL_NULL`, is only used for parameters (e.g. `? IS [NOT] NULL`).
-As far as we know, you could use any type, but the following description as a `CHAR(0)` is the most efficient, because you'll send no data at all, and only an Int16 null-indicator in protocol 10 - 12 or a single bit in the null-bitset in protocol 13 and higher.
+As far as we know, you could use any type, but the following description as a `CHAR(0)` is the most efficient, because you'll send no data at all, and only an `Int32` null-indicator in protocol 10 - 12 or a single bit in the null-bitset in protocol 13 and higher.
 
 [listing]
 ----
@@ -3171,6 +3171,11 @@ A text string, read or written as a `Buffer`, encoded in the connection characte
 [%autowidth, width="100%", cols="4", options="header", frame="none", grid="none", role="revhistory"]
 |===
 4+|Revision History
+
+|0.19
+|TBD
+|MR
+a|* ...
 
 |0.18
 |18 May 2025
