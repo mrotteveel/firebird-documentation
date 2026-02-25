@@ -146,6 +146,7 @@ The total size cannot be larger than (32KB-3).
 The two leading bytes store the declared length.
 There is no default size: the _n_ argument is mandatory.
 Leading and trailing NUL characters are stored, and they are not trimmed, except for those trailing characters that are past the declared length.
+If the number of bytes is not specified, 255 is used by default.
 
 |`VARCHAR(__n__)`, `CHAR VARYING(__n__)`, `CHARACTER VARYING(__n__)`
 |_n_ characters.
@@ -156,6 +157,7 @@ The total size of characters in bytes cannot be larger than (32KB-3), taking int
 The two leading bytes store the declared length.
 There is no default size: the _n_ argument is mandatory.
 Leading and trailing spaces are stored, and they are not trimmed, except for those trailing characters that are past the declared length.
+If the number of characters is not specified, 255 is used by default.
 |===
 
 [#langref-datatypes-inttypes]
@@ -1250,7 +1252,7 @@ Formally, the `COLLATE` clause is not part of the data type declaration, and its
 .Data Type Declaration Format
 [listing,subs=+quotes]
 ----
-{VARBINARY | BINARY VARYING} (_length_)
+{VARBINARY | BINARY VARYING} [(_length_)]
 ----
 
 [#langref-datatypes-varbinarytbl]
@@ -1261,7 +1263,7 @@ Formally, the `COLLATE` clause is not part of the data type declaration, and its
 ^| Description
 
 |length
-|Length in bytes between 1 and 32,765
+|Length in bytes between 1 and 32,765, defaults to 255.
 |===
 
 `VARBINARY` is a variable-length binary type, and is an SQL standard-compliant alias for `VARCHAR(__length__) CHARACTER SET OCTETS`.
@@ -1280,7 +1282,7 @@ Some tools may report the type as `VARCHAR CHARACTER SET OCTETS` instead of `VAR
 .Data Type Declaration Format
 [listing,subs=+quotes]
 ----
-{VARCHAR | {CHAR | CHARACTER} VARYING} (_length_)
+{VARCHAR | {CHAR | CHARACTER} VARYING} [(_length_)]
   [CHARACTER SET <set>] [COLLATE <name>]
 ----
 
@@ -1292,7 +1294,7 @@ Some tools may report the type as `VARCHAR CHARACTER SET OCTETS` instead of `VAR
 ^| Description
 
 |length
-|Length in characters.
+|Length in characters, defaults to 255.
 A valid _length_ is from 1 to the maximum number of characters that can be accommodated within 32,765 bytes.
 
 |_set_
@@ -1326,9 +1328,9 @@ Formally, the `COLLATE` clause is not part of the data type declaration, and its
 `NCHAR` is a fixed-length character data type with the `ISO8859_1` character set.
 In all other respects it is the same as `CHAR`.
 
-If no _length_ is specified, it is taken to be 1.
+If no _length_ is specified, it is taken to be 1, or -- for `VARYING` -- 255.
 
-A similar data type is available for the variable-length string type: `++NATIONAL {CHAR | CHARACTER} VARYING++`.
+A similar data type is available for the variable-length string type: `++NATIONAL {CHAR | CHARACTER} VARYING++`, with a default length of 255.
 
 .See also
 <<langref-datatypes-chartypes-char>>, <<langref-datatypes-chartypes-varchar>>
@@ -2224,13 +2226,13 @@ For reasons of organisation, the syntax of BLOB types are defined separately in 
   | TIME [{WITHOUT | WITH} TIME ZONE]
   | TIMESTAMP [{WITHOUT | WITH} TIME ZONE]
   | {DECIMAL | DEC | NUMERIC} [(_precision_ [, _scale_])]
-  | {VARCHAR | {CHAR | CHARACTER} VARYING} (_length_)
+  | {VARCHAR | {CHAR | CHARACTER} VARYING} [(_length_)]
     [CHARACTER SET _charset_]
   | {CHAR | CHARACTER} [(_length_)] [CHARACTER SET _charset_]
-  | {NCHAR | NATIONAL {CHARACTER | CHAR}} VARYING (_length_)
+  | {NCHAR | NATIONAL {CHARACTER | CHAR}} VARYING [(_length_)]
   | {NCHAR | NATIONAL {CHARACTER | CHAR}} [(_length_)]
   | BINARY [(_length_)]
-  | {VARBINARY | BINARY VARYING} (_length_)
+  | {VARBINARY | BINARY VARYING} [(_length_)]
 ----
 
 [#langref-datatypes-tbl-scalar-syntax]
@@ -2270,7 +2272,7 @@ It must be less than or equal to _precision_
 
 |length
 |The maximum length of a string, in characters, or -- for `BINARY` and `VARBINARY` -- bytes;
-optional for fixed-width character types, defaults to 1
+defaults to 1 for fixed-width (`CHAR`/`BINARY`) and 255 for variable-width (`VARCHAR`/`VARBINARY`).
 
 |charset
 |Character set
@@ -2360,16 +2362,16 @@ For more information, see <<langref-datatypes-array>>
   | TIME [{WITHOUT | WITH} TIME ZONE] <array_dim>
   | TIMESTAMP [{WITHOUT | WITH} TIME ZONE] <array_dim>
   | {DECIMAL | DEC | NUMERIC} [(_precision_ [, _scale_])] <array_dim>
-  | {VARCHAR | {CHAR | CHARACTER} VARYING} (_length_)
+  | {VARCHAR | {CHAR | CHARACTER} VARYING} [(_length_)]
     <array_dim> [CHARACTER SET _charset_]
   | {CHAR | CHARACTER} [(_length_)] <array_dim>
     [CHARACTER SET _charset_]
-  | {NCHAR | NATIONAL {CHARACTER | CHAR}} VARYING (_length_)
+  | {NCHAR | NATIONAL {CHARACTER | CHAR}} VARYING [(_length_)]
     <array_dim>
   | {NCHAR | NATIONAL {CHARACTER | CHAR}}
     [(_length_)] <array_dim>
   | BINARY [(_length_)] <array_dim>
-  | {VARBINARY | BINARY VARYING} (_length_) <array_dim>
+  | {VARBINARY | BINARY VARYING} [(_length_)] <array_dim>
 
 <array_dim> ::= '[' [_m_:{endsb}__n__ [,[_m_:{endsb}__n__ ...] ']'
 ----
@@ -2405,7 +2407,7 @@ It must be less than or equal to _precision_
 
 |_length_
 |The maximum length of a string, in characters, or -- for `BINARY` and `VARBINARY` -- bytes;
-optional for fixed-width character types, defaults to 1
+defaults to 1 for fixed-width (`CHAR`/`BINARY`) and 255 for variable-width (`VARCHAR`/`VARBINARY`).
 
 |charset
 |Character set

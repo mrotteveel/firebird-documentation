@@ -27,6 +27,7 @@ Please note that these are things we came across or thought of while working on 
   - https://github.com/FirebirdSQL/firebird/issues/7587 (also has some relation with the previous item syntax-wise)
 - Check if `COLLATE` clause can (maybe even should?) be moved to `<scalar_datatype>` definition (in `langref-datatypes-syntax-scalar-syntax`), instead of being scattered around in various places
   - See https://github.com/FirebirdSQL/firebird/pull/7748 
+  - Also remove sentences like "Formally, the `COLLATE` clause is not part of the data type declaration"
 - Check if maximum record size is mentioned anywhere in the language reference to update from 64 KiB to 1 MiB (or maybe mention it somewhere if not)
   - See https://github.com/FirebirdSQL/firebird/pull/7332 
 - Document `WITHIN GROUP` (when merged)
