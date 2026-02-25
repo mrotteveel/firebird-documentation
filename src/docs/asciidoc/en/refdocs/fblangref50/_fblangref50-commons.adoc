@@ -1193,13 +1193,13 @@ WHERE RDB$RELATION_NAME LIKE '%#_%' ESCAPE '#'
 ===== `STARTING WITH`
 
 .Syntax
-[listing]
+[listing,subs=+quotes]
 ----
-<value> [NOT] STARTING WITH <value>
+_expr1_ [NOT] { STARTING | STARTS } [WITH] _expr2_
 ----
 
-The `STARTING WITH` predicate searches for a string or a string-like type that starts with the characters in its _value_ argument.
-The case- and accent-sensitivity of `STARTING WITH` depends on the collation of the first _value_.
+The `STARTING WITH` predicate searches for a string or a string-like type that starts with the characters in its _expr2_ argument.
+The case- and accent-sensitivity of `STARTING WITH` depends on the collation of _expr1_.
 
 When `STARTING WITH` is used in the search conditions of DML queries, the Firebird optimizer can use an index on the searched column, if it exists.
 
