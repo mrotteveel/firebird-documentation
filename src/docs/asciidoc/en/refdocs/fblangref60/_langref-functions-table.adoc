@@ -7,11 +7,98 @@ They accept scalar inputs and produce one or more rows as output.
 .Syntax
 ----
 <built-in-table-function> ::=
-  <unlist-table-function> <correlation-or-recognition>
+    <generate-series-function> <correlation-or-recognition>
+  | <unlist-table-function> <correlation-or-recognition>
 ----
 
 [#langref-tblvalfunc-general]
 == General Purpose Table-valued Functions
+
+[#langref-tblvalfunc-generate-series]
+=== `GENERATE_SERIES()`
+
+Returns a table with a series of numbers within a specified interval.
+
+.Syntax
+[listing,subs="+quotes,macros"]
+----
+GENERATE_SERIES(_start_, _limit_ [, _step_])
+  [AS] <correlation-name> [ ( <column-name> ) ]
+
+!! Elsewhere referenced as the more general rules:         !!
+!! <generate-series-function> <correlation-or-recognition> !!
+----
+
+[#langref-tblvalfunc-tbl-generate-series]
+.`UNLIST` Function Parameters
+[cols="<1,<3", options="header",stripes="none"]
+|===
+^| Parameter
+^| Description
+
+|start
+|Start or first value of the series.
+Expression of an <<langref-datatypes-inttypes,integer>> or <<langref-datatypes-fixedtypes,fixed point>> data type.
+
+|limit
+|End or upper limit of the series.
+Expression of an <<langref-datatypes-inttypes,integer>> or <<langref-datatypes-fixedtypes,fixed point>> data type.
+
+|step
+|Non-zero value to add to produce the next value.
+Default is `1`.
+Expression of an <<langref-datatypes-inttypes,integer>> or <<langref-datatypes-fixedtypes,fixed point>> data type.
+
+|correlation-name
+|Name of the derived table produced by `GENERATE_SERIES` (required!)
+
+|column-name
+|Name of the column of the derived table.
+
+Depending on the use of the derived table, specifying the column-name may be required.
+If not specified, the column does not receive a name, but the column will have the alias `GENERATE_SERIES` when used in a top-level `FROM` clause.
+
+|===
+
+The function `GENERATE_SERIES` returns a table with a column of datatype `BIGINT`, `INT128`, `NUMERIC(18, x)`, `NUMERIC(38, x)`, where the precision (or type) is determined by the widest type, and the scale is determined by the maximum scale of the function arguments.
+
+.Rules
+* If _start_ greater than _limit_ and a positive _step_ value is specified, an empty table is returned.
+* If _start_ less than _limit_ and a negative _step_ value is specified, an empty table is returned.
+* The series stops once the last generated step value exceeds the _limit_ value.
+* If the _step_ argument is zero, an error is raised.
+
+.Ambiguity with stored procedures called `GENERATE_SERIES`
+[WARNING]
+====
+`GENERATE_SERIES` is not a reserved word, and this can result in ambiguity if a stored procedure `GENERATE_SERIES` exists on the search path.
+Firebird will use the `GENERATE_SERIES` built-in function for calls with two or three arguments *if* the correlation clause (`AS ...`) is present.
+For one argument, or four or more arguments, it will call the stored procedure `GENERATE_SERIES`.
+
+However, if you leave out the correlation clause, it will select from the procedure `GENERATE_SERIES`, which might be unexpected.
+
+If you need to select from a selectable stored procedure `GENERATE_SERIES` with two or three arguments *and* have to provide a correlation, then you need to qualify the procedure with its schema (e.g. `PUBLIC.GENERATE_SERIES`).
+====
+
+[#langref-tblvalfunc-generate-series-exmpl]
+==== `GENERATE_SERIES` Examples
+
+[listing]
+----
+select N
+from generate_series(1, 3) as S(N);
+
+select N
+from generate_series(3, 1, -1) as S(N);
+
+select N
+from generate_series(0, 9.9, 0.1) as S(N);
+
+select
+  dateadd(N minute to timestamp '2025-01-01 12:00') as START_TIME,
+  dateadd(N minute to timestamp '2025-01-01 12:00:59.9999') as FINISH_TIME
+from generate_series(0, 59) as S(N);
+----
 
 [#langref-tblvalfunc-unlist]
 === `UNLIST()`
