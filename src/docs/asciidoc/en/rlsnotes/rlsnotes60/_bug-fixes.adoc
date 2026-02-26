@@ -1,0 +1,49 @@
+[#rnfb60-bug]
+= Bugs Fixed
+
+////
+Individual issue template:
+
+_https://github.com/FirebirdSQL/firebird/issues/nnnn[#nnnn]_
+-- A description
+
+_Fixed by Some Person_
+
+'''
+
+<end of issue template>
+
+General outline (<version> ::= <major><minor><patch>[<pre>]):
+
+[#bug-<version>]
+== Firebird <major>.<minor>.<patch>[-<pre>] Release: Bug Fixes
+
+[#bug-<version>-core]
+=== Core Engine
+
+[#bug-<version>-crashes]
+=== Server Crashes/Hang-ups
+
+[#bug-<version>-api]
+=== API/Remote Interface
+
+[#bug-<version>-install]
+=== Installation Issues
+
+[#bug-<version>-utils]
+=== Utilities
+
+[#bug-<version>-util-isql]
+==== isql
+
+[#bug-<version>-util-gbak]
+==== gbak
+
+[#bug-<version>-util-<tool>]
+==== <tool>
+
+[#bug-<version>-<abbreviated-subject>]
+=== <subject>
+
+////
+

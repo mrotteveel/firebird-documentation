@@ -1,0 +1,22 @@
+[#rnfb60-engine]
+= Changes in the Firebird Engine
+
+[discrete#rnfb60-engine-links]
+== Quick Links
+
+* ...
+// TODO: add links to sub-sections: <<rnfb60-engine-id>>
+
+////
+Generic template:
+
+[#rnfb60-engine-<abbreviated-subject>
+== <subject>
+<implementer/author>
+
+Tracker ticket: https://github.com/FirebirdSQL/firebird/[pull/]<issue>[#<issue>]
+
+<description>
+
+////
+

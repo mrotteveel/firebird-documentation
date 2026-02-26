@@ -1,0 +1,36 @@
+[#rnfb60-ddl]
+= Data Definition Language (DDL)
+
+[discrete#rnfb60-ddl-links]
+== Quick Links
+
+* ...
+// TODO: add links to sub-sections: <<rnfb60-ddl-id>>
+
+////
+Generic template:
+
+[#rnfb60-ddl-<abbreviated-subject>
+== <subject>
+<implementer/author>
+
+Tracker ticket: https://github.com/FirebirdSQL/firebird/[pull/]<issue>[#<issue>]
+
+<short description>
+
+.Syntax
+[listing]
+----
+<syntax>
+----
+
+[<more details>]
+
+.Examples
+[listing]
+----
+<examples>
+----
+
+////
+

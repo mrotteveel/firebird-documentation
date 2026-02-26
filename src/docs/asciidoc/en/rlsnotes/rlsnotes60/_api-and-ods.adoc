@@ -1,0 +1,52 @@
+[#rnfb60-apiods]
+= Changes to the Firebird API and ODS
+
+*since Firebird 5.0 release*
+
+[#rnfb60-apiods-ods]
+== ODS (On-Disk Structure) Changes
+
+[#rnfb60-apiods-ods-number]
+=== New Minor ODS Number
+
+Firebird 6.0 creates databases with an ODS (On-Disk Structure) version of 14.0.
+
+Upgrading to Firebird 6.0 requires a backup and restore using https://firebirdsql.org/file/documentation/html/en/firebirddocs/gbak/firebird-gbak.html[gbak].
+
+[#rnfb60-apiods-new-systabs]
+=== New System Tables
+
+System tables added in ODS 14.0:
+
+//[horizontal]
+//`<name>`:: <description>
+
+
+[#rnfb60-apiods-new-syscols]
+=== New Columns in System Tables
+
+* ...
+
+[#rnfb60-apiods-api]
+== Application Programming Interfaces
+
+The wire protocol version for the Firebird 6.0 API is 20.
+Additions and changes are described in the sections below.
+
+[#rnfb60-apiods-api-ext]
+=== Main API Extensions
+
+A number of new methods have been added to the following interfaces.
+
+// TODO Remove section if no additions
+
+[#rnfb60-apiods-api-info]
+=== Extensions to various getInfo() Methods
+
+// TODO Remove section if no additions
+
+[#rnfb60-apiods-api-service-ext]
+=== Services API Extensions
+
+// TODO Remove section if no additions
+

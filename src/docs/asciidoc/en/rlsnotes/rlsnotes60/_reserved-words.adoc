@@ -1,0 +1,22 @@
+[#rnfb60-reswords]
+= Reserved Words and Changes
+
+[#rnfb60-reswords-new]
+== New Keywords in Firebird 6.0
+
+[#rnfb60-reswords-new-reserved]
+=== Reserved
+
+[cols="1*m", frame="none", grid="none", stripes="none"]
+|===
+| ...
+|===
+
+[#rnfb60-reswords-new-non-reserved]
+=== Non-reserved
+
+[cols="1*m", frame="none", grid="none", stripes="none"]
+|===
+| ...
+|===
+

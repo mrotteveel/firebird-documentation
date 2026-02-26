@@ -1,0 +1,26 @@
+:sectnums!:
+
+[appendix]
+[#rnfb60-licence]
+= Licence Notice
+
+The contents of this Documentation are subject to the Public Documentation License Version 1.0 (the "`License`");
+you may only use this Documentation if you comply with the terms of this Licence.
+Copies of the Licence are available at https://www.firebirdsql.org/pdfmanual/pdl.pdf (PDF) and https://www.firebirdsql.org/manual/pdl.html (HTML).
+
+The Original Documentation is entitled _Firebird 6.0 Release Notes_.
+
+The Initial Writer of the Original Documentation is: Dmitry Yemanov.
+Persons named in attributions are Contributors.
+
+Copyright (C) 2026.
+All Rights Reserved.
+Initial Writer contact: dimitr at users dot sourceforge dot net.
+
+Contributor(s): Mark Rotteveel.
+
+Portions created by Mark Rotteveel are Copyright (C) 2026.
+All Rights Reserved.
+(Contributor contact(s): mark at lawinegevaar dot nl).
+
+:sectnums:

@@ -1,0 +1,42 @@
+[#rnfb60-dml]
+= Data Manipulation Language (DML)
+
+[discrete#rnfb60-dml-links]
+== Quick Links
+
+* ...
+// TODO: add links to sub-sections: <<rnfb60-dml-id>>
+
+////
+Generic template:
+
+[#rnfb60-dml-<abbreviated-subject>
+== <subject>
+<implementer/author>
+
+Tracker ticket: https://github.com/FirebirdSQL/firebird/[pull/]<issue>[#<issue>]
+
+<short description>
+
+.Syntax
+[listing]
+----
+<syntax>
+----
+
+[<more details>]
+
+.Examples
+[listing]
+----
+<examples>
+----
+
+////
+
+
+[#rnfb60-dml-built-in-functions]
+== New Expressions and Built-in Functions
+
+// TODO Remove section if no additions
+// Make sure to use `===` for subsections, not the `==` in the generic template

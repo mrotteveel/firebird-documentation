@@ -1,0 +1,69 @@
+[#rlsnotes50]
+= Firebird 6.0.0-alpha-1 Release Notes
+Firebird{sp}Project:{sp}Core{sp}Developers; Mark Rotteveel
+0.1, TBD
+:doctype: book
+:sectnums:
+:sectanchors:
+:toc: left
+:toclevels: 3
+:sectnumlevels: 1
+:outlinelevels: 6:0
+:icons: font
+:experimental:
+:imagesdir: ../../images
+
+:sectnums!:
+
+include::_support-firebird-foundation.adoc[leveloffset=1]
+
+:sectnums:
+
+toc::[]
+
+include::_general-notes.adoc[leveloffset=1]
+
+
+include::_new-features.adoc[leveloffset=1]
+
+
+include::_engine.adoc[leveloffset=1]
+
+
+include::_api-and-ods.adoc[leveloffset=1]
+
+
+include::_reserved-words.adoc[leveloffset=1]
+
+
+include::_config-params.adoc[leveloffset=1]
+
+
+include::_security.adoc[leveloffset=1]
+
+
+include::_msql.adoc[leveloffset=1]
+
+
+include::_ddl.adoc[leveloffset=1]
+
+
+include::_dml.adoc[leveloffset=1]
+
+
+include::_psql.adoc[leveloffset=1]
+
+
+include::_utilities.adoc[leveloffset=1]
+
+
+include::_compatibility.adoc[leveloffset=1]
+
+
+include::_bug-fixes.adoc[leveloffset=1]
+
+
+include::_fb-teams.adoc[leveloffset=1]
+
+
+include::_licence.adoc[leveloffset=1]

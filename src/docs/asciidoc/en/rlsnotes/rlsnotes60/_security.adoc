@@ -1,0 +1,6 @@
+[#rnfb60-security]
+= Security
+
+Security enhancements in Firebird 6 include:
+
+// TODO ...

@@ -1,0 +1,28 @@
+[#rnfb60-fbconf]
+= Configuration Additions and Changes
+
+New configuration parameters:
+
+// TODO Specific sections needed
+
+[#rnfb60-config-other]
+== Other Parameters
+
+// TODO Remove section if no additions
+
+[#rnfb60-config-changes]
+== Changed configuration parameters
+
+// TODO Remove section if no additions
+
+[#rnfb60-replconf]
+== Replication Configuration Additions and Changes
+
+// TODO Remove section if no additions
+
+[#rnfb60-config-cleanup]
+== Removed configuration parameters
+
+// TODO Remove section if no additions
+
+// TODO Other sections needed

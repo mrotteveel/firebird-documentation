@@ -1,0 +1,62 @@
+[#rnfb60-general]
+= General Notes
+
+// TODO Write introduction, etc
+
+[#rnfb60-general-compat]
+== Compatibility with Older Versions
+
+Known incompatibilities are detailed in the <<rnfb60-compat,Compatibility Issues>> chapter.
+
+////
+Individual issue template:
+
+_https://github.com/FirebirdSQL/firebird/issues/nnnn[#nnnn]_
+-- A description
+
+_Fixed by Some Person_
+
+'''
+
+<end of issue template>
+
+General outline (<version> ::= <major><minor><patch>[<pre>])::
+
+[#rnfb60-general-<version>]
+== Sub-release <major>.<minor>.<patch>[-<pre>]
+
+Bugs reported and fixed prior to the version <major>.<minor>.<patch>[-<pre>] release are listed in <<bug-version>>.
+
+[#rnfb60-general-<version>-improvements]
+=== <major>.<minor>.<patch>[-<pre>] Improvements
+
+[#rnfb60-general-<version>-<abbreviated-subject>]
+=== <major>.<minor>.<patch>[-<pre>] <subject>>
+
+////
+
+
+[#rnfb60-general-bugreport]
+== Bug Reporting
+
+Bugs fixed in this release are listed and described in chapter <<rnfb60-bug>>.
+
+* If you think you have discovered a new bug in this release, please make a point of reading the instructions for bug reporting in the article https://www.firebirdsql.org/en/how-to-report-bugs/[How to Report Bugs Effectively], at the Firebird Project website.
+* If you think a bug fix has not worked, or has caused a regression, please locate the original bug report in the Tracker, reopen it if necessary, and follow the instructions below.
+
+Follow these guidelines as you attempt to analyse your bug:
+
+. Write detailed bug reports, supplying the exact build number of your Firebird kit.
+Also provide details of the OS platform.
+. Include reproducible test data in your report and post it to our https://github.com/FirebirdSQL/firebird/issues[Tracker].
+
+[#rnfb60-general-docs]
+== Documentation
+
+You will find all the README documents referred to in these notes -- as well as many others not referred to -- in the doc subdirectory of your Firebird 6.0 installation.
+
+// TODO Add link to fblangref60 once published
+
+More Firebird documentation can be found in the https://firebirdsql.org/en/firebird-rdbms/[Documentation] section of https://firebirdsql.org/[firebirdsql.org].
+
+__ -- The Firebird Project__

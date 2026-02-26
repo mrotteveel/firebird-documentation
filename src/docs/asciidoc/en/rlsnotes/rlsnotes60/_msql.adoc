@@ -1,0 +1,35 @@
+[#rnfb60-msql]
+= Management Statements
+
+[discrete#rnfb60-msql-links]
+== Quick Links
+
+* ...
+// TODO: add links to sub-sections: <<rnfb60-msql-id>>
+
+////
+Generic template:
+
+[#rnfb60-msql-<abbreviated-subject>
+== <subject>
+<implementer/author>
+
+Tracker ticket: https://github.com/FirebirdSQL/firebird/[pull/]<issue>[#<issue>]
+
+<short description>
+
+.Syntax
+[listing]
+----
+<syntax>
+----
+
+[<more details>]
+
+.Examples
+[listing]
+----
+<examples>
+----
+
+////

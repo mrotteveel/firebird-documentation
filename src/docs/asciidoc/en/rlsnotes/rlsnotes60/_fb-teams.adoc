@@ -1,0 +1,86 @@
+[#rnfb60-fb-teams]
+= Firebird 6.0 Project Teams
+
+// TODO Check for additions and removals
+
+[#rnfb60-fb-devs]
+.Firebird Development Teams
+[cols="2,1,4", options="header"]
+|===
+^| Developer
+^| Country
+^| Major Tasks
+
+|Dmitry Yemanov
+|Russian Federation
+|Full-time database engineer/implementor;
+core team leader
+
+|Alexander Peshkov
+|Russian Federation
+|Full-time security features coordinator;
+buildmaster;
+porting authority
+
+|Vladyslav Khorsun
+|Ukraine
+|Full-time DB engineer;
+SQL feature designer/implementor
+
+|Adriano dos Santos Fernandes
+|Brazil
+|International character-set handling;
+text and text BLOB enhancements;
+new DSQL features;
+code scrutineering
+
+|Roman Simakov
+|Russian Federation
+|Engine contributions
+
+|Dimitry Sibiryakov
+|Czech Republic
+|Engine and replication contributions
+
+|Ilya Eremin
+|Russian Federation
+|Engine contributions
+
+|Paul Beach
+|France
+|Release Manager;
+MacOS Builds
+
+|Pavel Cisar
+|Czech Republic
+|QA tools designer/coordinator;
+Firebird Butler coordinator;
+Python driver developer
+
+|Pavel Zotov
+|Russian Federation
+|QA tester and tools developer
+
+|Paul Reeves
+|France
+|Windows installers and builds
+
+|Mark Rotteveel
+|The Netherlands
+|Jaybird implementer and co-coordinator;
+Documentation writer
+
+|Jiri Cincura
+|Czech Republic
+|Developer and coordinator of .NET providers
+
+|Martin Koeditz
+|Germany
+|Developer and coordinator of PHP driver
+Documentation translator
+
+|Alexey Kovyazin
+|Russian Federation
+|Website coordinator
+
+|===
