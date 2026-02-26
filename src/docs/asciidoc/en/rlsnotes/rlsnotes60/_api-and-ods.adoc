@@ -6,8 +6,8 @@
 [#rnfb60-apiods-ods]
 == ODS (On-Disk Structure) Changes
 
-[#rnfb60-apiods-ods-number]
-=== New Minor ODS Number
+[#rnfb60-apiods-ods-version]
+=== New Major ODS Version
 
 Firebird 6.0 creates databases with an ODS (On-Disk Structure) version of 14.0.
 
