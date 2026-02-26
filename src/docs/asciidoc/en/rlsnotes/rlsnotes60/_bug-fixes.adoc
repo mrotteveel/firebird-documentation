@@ -47,3 +47,15 @@ General outline (<version> ::= <major><minor><patch>[<pre>]):
 
 ////
 
+[#bug-600a1]
+== Firebird 6.0.0 Alpha 1 Release: Bug Fixes
+
+[#bug-600a1-core]
+=== Core Engine
+
+_https://github.com/FirebirdSQL/firebird/issues/7600[#7600]_
+-- `CASE` statement different result compared to Firebird 2.5.9
+
+_Fixed by Adriano dos Santos Fernandes_
+
+'''
