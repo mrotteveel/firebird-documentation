@@ -6,6 +6,9 @@
 
 * ...
 // TODO: add links to sub-sections: <<rnfb60-dml-id>>
+* <<rnfb60-dml-built-in-functions>>
+** <<rnfb60-dml-any-value>>
+** ...
 
 ////
 Generic template:
@@ -38,5 +41,26 @@ Tracker ticket: https://github.com/FirebirdSQL/firebird/[pull/]<issue>[#<issue>]
 [#rnfb60-dml-built-in-functions]
 == New Expressions and Built-in Functions
 
-// TODO Remove section if no additions
-// Make sure to use `===` for subsections, not the `==` in the generic template
+[#rnfb60-dml-any-value]
+=== `ANY_VALUE` Aggregate Function
+Adriano dos Santos Fernandes
+
+`ANY_VALUE` is a SQL:2023 non-deterministic aggregate function that returns the result of an expression applied to an arbitrary row in the group.
+
+.Syntax
+[listing]
+----
+ANY_VALUE ( <expr> )
+----
+
+This function only returns `NULL` if there is no row in the group where _expr_ produces a non-``NULL`` result.
+
+.Example
+[listing]
+----
+select
+  DEPT_NO,
+  any_value(FIRST_NAME || ' ' || LAST_NAME) "Example Employee"
+from EMPLOYEE
+group by DEPT_NO
+----

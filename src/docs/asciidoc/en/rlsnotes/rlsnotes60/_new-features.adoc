@@ -27,3 +27,12 @@ For more details, see <<rnfb60-section-id>>.
 <end of feature template>
 
 ////
+
+[#rnfb60-60alpha1-complete]
+=== Complete In Firebird 6.0 Alpha 1
+
+Aggregate function `ANY_VALUE`::
+https://github.com/FirebirdSQL/firebird/pull/7617[#7617]
+_by Adriano dos Santos Fernandes_
++
+For more details, see <<rnfb60-dml-any-value>>.
