@@ -45,6 +45,8 @@ Tracker ticket: https://github.com/FirebirdSQL/firebird/[pull/]<issue>[#<issue>]
 === `ANY_VALUE` Aggregate Function
 Adriano dos Santos Fernandes
 
+Tracker ticket: https://github.com/FirebirdSQL/firebird/pull/7617[#7617]
+
 `ANY_VALUE` is a SQL:2023 non-deterministic aggregate function that returns the result of an expression applied to an arbitrary row in the group.
 
 .Syntax
