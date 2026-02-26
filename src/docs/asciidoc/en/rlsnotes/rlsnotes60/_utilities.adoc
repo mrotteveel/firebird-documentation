@@ -16,7 +16,39 @@ Improvements and additions to the Firebird utilities.
 [#rnfb60-util-isql]
 == _isql_
 
-// TODO Remove section if no additions
+[#rnfb60-util-isql-explain]
+=== `EXPLAIN` Statement
+Adriano dos Santos Fernandes
+
+Tracker ticket: https://github.com/FirebirdSQL/firebird/issues/7675[#7675]
+
+`EXPLAIN` is an ISQL-only statement to show the query plan of a statement without executing it.
+
+For similar functionality in DSQL, see <<rnfb60-engine-sql-explain,`SYSTEM.RDB$SQL.EXPLAIN`>>.
+
+.Syntax
+[listing]
+----
+EXPLAIN <statement>
+----
+
+.Examples:
+[listing]
+----
+SQL> explain select * from employees where id = ?;
+
+SQL> set term !;
+SQL>
+SQL> explain
+CON> execute block
+CON> as
+CON>     declare id integer;
+CON> begin
+CON>     select id from employees where id = ? into id;
+CON> end!
+SQL>
+SQL> set term ;!
+----
 
 [#rnfb60-utils-gbak]
 == _gbak_

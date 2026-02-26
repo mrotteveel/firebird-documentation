@@ -526,7 +526,7 @@ from RDB$SQL.EXPLAIN(q'{
 [#langref-sys-pckg-sql-parse-unqualified-names]
 === Procedure `PARSE_UNQUALIFIED_NAMES`
 
-A selectable procedure that parses a list of unqualified SQL identifiers and returns one row for each identifier.
+A selectable procedure that parses a list of unqualified SQL identifiers and returns a row for each identifier.
 The input must follow syntax rules for names and the output of unquoted names are uppercased.
 
 .Input parameters

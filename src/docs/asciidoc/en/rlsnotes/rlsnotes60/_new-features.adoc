@@ -36,3 +36,15 @@ https://github.com/FirebirdSQL/firebird/pull/7617[#7617]
 _by Adriano dos Santos Fernandes_
 +
 For more details, see <<rnfb60-dml-any-value>>.
+
+Package `SYSTEM.RDB$SQL` -- utility routines to work with dynamic SQL::
+https://github.com/FirebirdSQL/firebird/issues/7675[#7675]
+_by Adriano dos Santos Fernandes_
++
+For more details, see <<rnfb60-engine-sql-pkg>>.
+
+ISQL `EXPLAIN` statement::
+https://github.com/FirebirdSQL/firebird/issues/7675[#7675]
+_by Adriano dos Santos Fernandes_
++
+For more details, see <<rnfb60-util-isql-explain>>.
