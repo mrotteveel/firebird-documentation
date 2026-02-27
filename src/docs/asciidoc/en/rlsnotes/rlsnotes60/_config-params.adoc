@@ -23,6 +23,12 @@ New configuration parameters:
 [#rnfb60-config-cleanup]
 == Removed configuration parameters
 
-// TODO Remove section if no additions
+`MaxIdentifierByteLength`::
+Previously used for restricting maximum identifier length in bytes.
+The maximum is now always 252 bytes.
+
+`MaxIdentifierCharLength`::
+Previously used for restricting maximum identifier length in characters.
+The maximum is now always 63 characters.
 
 // TODO Other sections needed
