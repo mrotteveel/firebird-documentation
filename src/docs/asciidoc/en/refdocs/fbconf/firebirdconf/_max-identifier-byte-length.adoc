@@ -9,6 +9,7 @@ Global, and per-database
 .Availability
 [horizontal.compact]
 Added:: 4.0
+Removed:: 6.0
 
 .Syntax
 [listing,subs=+quotes]
