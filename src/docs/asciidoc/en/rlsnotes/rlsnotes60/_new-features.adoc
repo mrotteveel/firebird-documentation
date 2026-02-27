@@ -31,6 +31,12 @@ For more details, see <<rnfb60-section-id>>.
 [#rnfb60-60alpha1-complete]
 === Complete In Firebird 6.0 Alpha 1
 
+Allow any expression as default value in `DECLARE VARIABLE`::
+https://github.com/FirebirdSQL/firebird/issues/7590[#7590]
+_by Adriano dos Santos Fernandes_
++
+For more details, see <<rnfb60-psql-decl-var-init>>
+
 Aggregate function `ANY_VALUE`::
 https://github.com/FirebirdSQL/firebird/pull/7617[#7617]
 _by Adriano dos Santos Fernandes_

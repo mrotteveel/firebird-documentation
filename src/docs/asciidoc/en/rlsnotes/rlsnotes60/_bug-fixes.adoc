@@ -59,3 +59,10 @@ _https://github.com/FirebirdSQL/firebird/issues/7600[#7600]_
 _Fixed by Adriano dos Santos Fernandes_
 
 '''
+
+_https://github.com/FirebirdSQL/firebird/issues/7715[#7715]_
+-- Support multibyte (UTF8) start/end character in alternative string literal
+
+_Fixed by Adriano dos Santos Fernandes_
+
+'''
