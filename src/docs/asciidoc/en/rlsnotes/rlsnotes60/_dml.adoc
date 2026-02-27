@@ -13,7 +13,7 @@
 ////
 Generic template:
 
-[#rnfb60-dml-<abbreviated-subject>
+[#rnfb60-dml-<abbreviated-subject>]
 == <subject>
 <implementer/author>
 

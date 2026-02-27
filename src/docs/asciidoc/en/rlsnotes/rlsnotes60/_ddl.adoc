@@ -4,13 +4,14 @@
 [discrete#rnfb60-ddl-links]
 == Quick Links
 
-* ...
+* <<rnfb60-ddl-alter-func-det>>
+* <<rnfb60-ddl-alter-sql-sec>>
 // TODO: add links to sub-sections: <<rnfb60-ddl-id>>
 
 ////
 Generic template:
 
-[#rnfb60-ddl-<abbreviated-subject>
+[#rnfb60-ddl-<abbreviated-subject>]
 == <subject>
 <implementer/author>
 
@@ -34,3 +35,54 @@ Tracker ticket: https://github.com/FirebirdSQL/firebird/[pull/]<issue>[#<issue>]
 
 ////
 
+[#rnfb60-ddl-alter-func-det]
+== Alter `DETERMINISTIC` state of functions
+Alexander Zhdanov
+
+Tracker ticket: https://github.com/FirebirdSQL/firebird/7427[#7427]
+
+Added the ability to set or clear the deterministic state of a function without specifying the entire body.
+
+.Syntax
+[listing]
+----
+ALTER FUNCTION <name> <alter-function-option>...
+
+<alter-function-option> ::=
+    [NOT] DETERMINISTIC
+  | <sql-security-option>
+----
+
+The SQL security options are covered in <<rnfb60-ddl-alter-sql-sec>>.
+
+[#rnfb60-ddl-alter-sql-sec]
+== Alter `SQL SECURITY` state of functions, procedures, and packages
+Alexander Zhdanov
+
+Tracker ticket: https://github.com/FirebirdSQL/firebird/issues/7744[#7744]
+
+Added the ability to alter the SQL security state of a function, procedure, or package without specifying the entire body.
+
+.Syntax
+[listing]
+----
+ALTER PROCEDURE <name> <sql-security-option>
+
+ALTER PACKAGE <name> <sql-security-option>
+
+ALTER FUNCTION <name> <alter-function-option>...
+
+<sql-security-option> ::=
+    SQL SECURITY {INVOKER | DEFINER}
+  | DROP SQL SECURITY
+
+<alter-function-option> ::=
+    [NOT] DETERMINISTIC
+  | <sql-security-option>
+----
+
+Dropping the SQL security state will apply the SQL security configuration of the schema.
+
+Although the syntax of `ALTER FUNCTION` allows specifying multiple conflicting SQL security options, doing so will raise an error ("`__duplicate specification of SQL SECURITY - not supported__`").
+
+The `[NOT] DETERMINISTIC` option for `ALTER FUNCTION` is covered in <<rnfb60-ddl-alter-func-det>>.
