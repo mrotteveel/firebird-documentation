@@ -38,7 +38,10 @@ Additions and changes are described in the sections below.
 
 A number of new methods have been added to the following interfaces.
 
-// TODO Remove section if no additions
+[#rnfb60-apiods-api-statement]
+==== Statement
+
+A new flag `IStatement::PREPARE_REQUIRE_SEMICOLON` was added to support ISQL's <<rnfb60-util-isql-autoterm,automatic end of statement detection>>.
 
 [#rnfb60-apiods-api-info]
 === Extensions to various getInfo() Methods

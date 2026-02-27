@@ -50,6 +50,60 @@ SQL>
 SQL> set term ;!
 ----
 
+[#rnfb60-util-isql-autoterm]
+=== `SET AUTOTERM {ON|OFF}`
+Adriano dos Santos Fernandes
+
+Tracker ticket: https://github.com/FirebirdSQL/firebird/pull/7868[#7868]
+
+`SET AUTOTERM` configures automatic end of statement detection.
+When set to `ON`, the terminator defined with `SET TERM` is reset to a semicolon, and ISQL will use new heuristics for end of statement detection, where the engine helps ISQL to detect valid usage of semicolons inside statements.
+
+At each semicolon (outside quotes or comments), ISQL prepares the query buffer with flag `IStatement::PREPARE_REQUIRE_SEMICOLON`.
+
+If the engine prepares the statement successfully, it's run and ISQL is put in new statement mode.
+
+If the engine returns error `isc_command_end_err2`, then ISQL is put in statement continuation mode and asks for another line, repeating the process.
+When this error happens together with `IStatement::PREPARE_REQUIRE_SEMICOLON`, the trace facility will not log the error.
+
+If the engine returns a different error, the error is shown and ISQL is put in new statement mode.
+
+.Notes
+* This option can also be activated with commandline parameter `-autot[erm]`
+* `SET AUTOTERM` can only be used with a Firebird 6 or later engine
+* Executing `SET TERM` automatically disables `AUTOTERM`, i.e. sets it to `OFF`
+* `SET AUTOTERM ON` automatically resets the terminator to semicolon
+* While `AUTOTERM ON` can be used in non-interactive scripts, it may slow down big scripts with PSQL statements spanning many statements.
+At each semicolon, ISQL will attempt to prepare the statement, which can be inefficient.
++
+In other words, for scripts, use of `SET TERM` should be preferred over `SET AUTOTERM`.
+
+
+.Examples
+[listing]
+----
+SQL> SET AUTOTERM ON;
+
+SQL> execute block returns (o1 integer)
+CON> as
+CON> begin
+CON>     o1 = 1;
+CON>     suspend;
+CON> end;
+
+          O1
+============
+1
+
+SQL> select 1
+CON>     from rdb$database
+CON>     where true;
+
+    CONSTANT
+============
+1
+----
+
 [#rnfb60-utils-gbak]
 == _gbak_
 
