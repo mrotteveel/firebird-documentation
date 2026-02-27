@@ -6,6 +6,7 @@
 
 * <<rnfb60-ddl-alter-func-det>>
 * <<rnfb60-ddl-alter-sql-sec>>
+* <<rnfb60-ddl-createdb-owner>>
 // TODO: add links to sub-sections: <<rnfb60-ddl-id>>
 
 ////
@@ -86,3 +87,24 @@ Dropping the SQL security state will apply the SQL security configuration of the
 Although the syntax of `ALTER FUNCTION` allows specifying multiple conflicting SQL security options, doing so will raise an error ("`__duplicate specification of SQL SECURITY - not supported__`").
 
 The `[NOT] DETERMINISTIC` option for `ALTER FUNCTION` is covered in <<rnfb60-ddl-alter-func-det>>.
+
+[#rnfb60-ddl-createdb-owner]
+== Create database with a different owner
+Dimitry Sibiryakov
+
+Tracker ticket: https://github.com/FirebirdSQL/firebird/issues/7719[#7719]
+
+The `CREATE DATABASE` statement now accepts an `OWNER` clause to set a different user than the creator as the owner.
+Only users with administrator privileges can use the `OWNER` clause.
+
+.Syntax
+[listing]
+----
+CREATE DATABASE <filespec>
+  [ <db_initial_option>... ]
+  [ <db_config_option>... ]
+
+<db_initial_option> ::=
+    !! existing options !!
+  | OWNER _owner_
+----

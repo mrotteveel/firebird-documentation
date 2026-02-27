@@ -17,8 +17,8 @@ DSQL, ESQL
 [listing,subs="+quotes,attributes"]
 ----
 CREATE DATABASE <filespec>
-  [<db_initial_option> [<db_initial_option> ...]]
-  [<db_config_option> [<db_config_option> ...]]
+  [ <db_initial_option>... ]
+  [ <db_config_option>... ]
 
 <db_initial_option> ::=
     USER _username_
