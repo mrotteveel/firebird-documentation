@@ -53,6 +53,13 @@ General outline (<version> ::= <major><minor><patch>[<pre>]):
 [#bug-600a1-core]
 === Core Engine
 
+_https://github.com/FirebirdSQL/firebird/issues/7476[#7476]_
+-- Improvement on procedures/triggers to recognise changes in a domain used in `COALESCE`
+
+_Fixed by Adriano dos Santos Fernandes_
+
+'''
+
 _https://github.com/FirebirdSQL/firebird/issues/7600[#7600]_
 -- `CASE` statement different result compared to Firebird 2.5.9
 
