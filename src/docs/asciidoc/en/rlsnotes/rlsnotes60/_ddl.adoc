@@ -37,7 +37,7 @@ Tracker ticket: https://github.com/FirebirdSQL/firebird/[pull/]<issue>[#<issue>]
 ////
 
 [#rnfb60-ddl-alter-func-det]
-== Alter `DETERMINISTIC` state of functions
+== Alter `DETERMINISTIC` State of Functions
 Alexander Zhdanov
 
 Tracker ticket: https://github.com/FirebirdSQL/firebird/7427[#7427]
@@ -57,7 +57,7 @@ ALTER FUNCTION <name> <alter-function-option>...
 The SQL security options are covered in <<rnfb60-ddl-alter-sql-sec>>.
 
 [#rnfb60-ddl-alter-sql-sec]
-== Alter `SQL SECURITY` state of functions, procedures, and packages
+== Alter `SQL SECURITY` State of Functions, Procedures, and Packages
 Alexander Zhdanov
 
 Tracker ticket: https://github.com/FirebirdSQL/firebird/issues/7744[#7744]
@@ -89,7 +89,7 @@ Although the syntax of `ALTER FUNCTION` allows specifying multiple conflicting S
 The `[NOT] DETERMINISTIC` option for `ALTER FUNCTION` is covered in <<rnfb60-ddl-alter-func-det>>.
 
 [#rnfb60-ddl-createdb-owner]
-== Create database with a different owner
+== Create Database With a Different Owner
 Dimitry Sibiryakov
 
 Tracker ticket: https://github.com/FirebirdSQL/firebird/issues/7719[#7719]

@@ -31,26 +31,31 @@ For more details, see <<rnfb60-section-id>>.
 [#rnfb60-60alpha1-complete]
 === Complete In Firebird 6.0 Alpha 1
 
-Allow any expression as default value in `DECLARE VARIABLE`::
+<<rnfb60-ddl-alter-func-det,Alter `DETERMINISTIC` State of Functions>>::
+https://github.com/FirebirdSQL/firebird/7427[#7427]
+_by Alexander Zhdanov_
+
+<<rnfb60-psql-decl-var-init,Allow any expression as default value in `DECLARE VARIABLE`>>::
 https://github.com/FirebirdSQL/firebird/issues/7590[#7590]
 _by Adriano dos Santos Fernandes_
-+
-For more details, see <<rnfb60-psql-decl-var-init>>
 
-Aggregate function `ANY_VALUE`::
+<<rnfb60-dml-any-value,Aggregate function `ANY_VALUE`>>::
 https://github.com/FirebirdSQL/firebird/pull/7617[#7617]
 _by Adriano dos Santos Fernandes_
-+
-For more details, see <<rnfb60-dml-any-value>>.
 
-Package `SYSTEM.RDB$SQL` -- utility routines to work with dynamic SQL::
+<<rnfb60-engine-sql-pkg,Package `SYSTEM.RDB$SQL` -- utility routines to work with dynamic SQL>>::
 https://github.com/FirebirdSQL/firebird/issues/7675[#7675]
 _by Adriano dos Santos Fernandes_
-+
-For more details, see <<rnfb60-engine-sql-pkg>>.
 
-ISQL `EXPLAIN` statement::
+<<rnfb60-util-isql-explain,ISQL `EXPLAIN` statement>>::
 https://github.com/FirebirdSQL/firebird/issues/7675[#7675]
 _by Adriano dos Santos Fernandes_
-+
-For more details, see <<rnfb60-util-isql-explain>>.
+
+<<rnfb60-ddl-createdb-owner, Create Database With a Different Owner>>::
+https://github.com/FirebirdSQL/firebird/issues/7719[#7719]
+_by Dimitry Sibiryakov_
+
+<<rnfb60-ddl-alter-sql-sec,Alter `SQL SECURITY` State of Functions, Procedures, and Packages>>::
+https://github.com/FirebirdSQL/firebird/issues/7744[#7744]
+_by Alexander Zhdanov_
+
