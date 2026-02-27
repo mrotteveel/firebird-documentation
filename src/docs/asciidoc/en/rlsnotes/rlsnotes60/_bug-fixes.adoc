@@ -72,4 +72,14 @@ _https://github.com/FirebirdSQL/firebird/issues/7715[#7715]_
 
 _Fixed by Adriano dos Santos Fernandes_
 
-'''
+''''
+
+[#bug-600a1-util-isql]
+==== isql
+
+_https://github.com/FirebirdSQL/firebird/pull/187_[#187]
+-- If stdin is `FILE_TYPE_PIPE` treat it as non-interactive
+
+_Fixed by Artyom Smirnov_
+
+''''
