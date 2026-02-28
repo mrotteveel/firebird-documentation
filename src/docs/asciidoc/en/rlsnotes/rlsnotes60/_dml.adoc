@@ -3,6 +3,7 @@
 
 [#rnfb60-dml-links]
 .Quick Links
+* <<rnfb60-dml-named-args>>
 * <<rnfb60-dml-built-in-functions>>
 ** <<rnfb60-dml-any-value>>
 ** ...
@@ -33,6 +34,66 @@ Tracker ticket: https://github.com/FirebirdSQL/firebird/[pull/]<issue>[#<issue>]
 ----
 
 ////
+
+[#rnfb60-dml-named-args]
+== Named Arguments for Function and Procedure Calls
+Adriano dos Santos Fernandes
+
+Tracker ticket: https://github.com/FirebirdSQL/firebird/issues/7586[#7586]
+
+Named arguments allows you to specify function and procedure arguments by name, rather than by position.
+
+This is especially useful when a routine has a lot of parameters, you want to specify arguments in a different order, or not specify those with default values.
+
+.Syntax
+[listing,subs=+quotes]
+----
+<function call> ::=
+  [_schema_ .] [_package_ .] _function_ ( [<arguments>] )
+
+<procedure selection> ::=
+  [_schema_ .] [_package_ .]  _procedure_ [( <arguments> )]
+
+<execute procedure> ::=
+  EXECUTE PROCEDURE [_schema_ .] [_package_ .] _procedure_
+    [ (<arguments>) | <arguments> ]
+    [RETURNING_VALUES ...]
+
+<arguments> ::=
+    <positional arguments>
+  | [ <positional arguments> , ] <named arguments>
+
+<positional arguments> ::=
+  <value> [ { , <value> }... ]
+
+<named arguments> ::=
+  <named argument> [ { , <named argument> }... ]
+
+<named argument> ::=
+  _argument-name_ => <value>
+----
+
+Like the positional syntax, all arguments without default values are required.
+
+A call can use positional, named, or mixed arguments.
+In mixed syntax, positional arguments must appear before named arguments.
+
+.Examples
+[listing]
+----
+select function_name(parameter2 => 'Two', parameter1 => 1)
+  from rdb$database;
+
+select function_name(1, parameter2 => 'Two')
+  from rdb$database;
+
+execute procedure insert_customer(
+  last_name => 'SCHUMACHER',
+  first_name => 'MICHAEL');
+
+select *
+  from get_customers(city_id => 10, last_name => 'SCHUMACHER');
+----
 
 
 [#rnfb60-dml-built-in-functions]

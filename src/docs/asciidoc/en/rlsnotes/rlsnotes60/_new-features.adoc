@@ -39,6 +39,10 @@ _by Adriano dos Santos Fernandes_
 https://github.com/FirebirdSQL/firebird/7427[#7427]
 _by Alexander Zhdanov_
 
+<<rnfb60-dml-named-args,Named Arguments for Function and Procedure Calls>>::
+https://github.com/FirebirdSQL/firebird/issues/7586[#7586]
+_by Adriano dos Santos Fernandes_
+
 <<rnfb60-psql-decl-var-init,Allow any expression as default value in `DECLARE VARIABLE`>>::
 https://github.com/FirebirdSQL/firebird/issues/7590[#7590]
 _by Adriano dos Santos Fernandes_
