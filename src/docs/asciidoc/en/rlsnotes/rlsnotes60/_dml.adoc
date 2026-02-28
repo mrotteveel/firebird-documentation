@@ -3,6 +3,7 @@
 
 [#rnfb60-dml-links]
 .Quick Links
+* <<rnfb60-dml-routine-call-default>>
 * <<rnfb60-dml-named-args>>
 * <<rnfb60-dml-built-in-functions>>
 ** <<rnfb60-dml-any-value>>
@@ -34,6 +35,22 @@ Tracker ticket: https://github.com/FirebirdSQL/firebird/[pull/]<issue>[#<issue>]
 ----
 
 ////
+
+[#rnfb60-dml-routine-call-default]
+== Allow `DEFAULT` Keyword in Argument List
+Adriano dos Santos Fernandes
+
+Tracker ticket: https://github.com/FirebirdSQL/firebird/issues/7566[#7566]
+
+The keyword `DEFAULT` can now be used in an argument list of a function or procedure call to explicitly use its default value (or that of its domain).
+If the parameter or its domain has no default, the actual argument value is `NULL`.
+
+.Example
+[listing]
+----
+select function_name(1, DEFAULT, DEFAULT, 'Something')
+from rdb$database;
+----
 
 [#rnfb60-dml-named-args]
 == Named Arguments for Function and Procedure Calls
@@ -82,19 +99,18 @@ In mixed syntax, positional arguments must appear before named arguments.
 [listing]
 ----
 select function_name(parameter2 => 'Two', parameter1 => 1)
-  from rdb$database;
+from rdb$database;
 
 select function_name(1, parameter2 => 'Two')
-  from rdb$database;
+from rdb$database;
 
 execute procedure insert_customer(
   last_name => 'SCHUMACHER',
   first_name => 'MICHAEL');
 
 select *
-  from get_customers(city_id => 10, last_name => 'SCHUMACHER');
+from get_customers(city_id => 10, last_name => 'SCHUMACHER');
 ----
-
 
 [#rnfb60-dml-built-in-functions]
 == New Expressions and Built-in Functions
