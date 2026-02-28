@@ -1,11 +1,9 @@
 [#rnfb60-engine]
 = Changes in the Firebird Engine
 
-[discrete#rnfb60-engine-links]
-== Quick Links
-
+[#rnfb60-engine-links]
+.Quick Links
 * <<rnfb60-engine-sql-pkg>>
-// TODO: add links to sub-sections: <<rnfb60-engine-id>>
 
 ////
 Generic template:

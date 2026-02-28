@@ -1,11 +1,9 @@
 [#rnfb60-psql]
 = Procedural SQL (PSQL)
 
-[discrete#rnfb60-psql-links]
-== Quick Links
-
+[#rnfb60-psql-links]
+.Quick Links
 * <<rnfb60-psql-decl-var-init>>
-// TODO: add links to sub-sections: <<rnfb60-psql-id>>
 
 [#rnfb60-psql-decl-var-init]
 == `DECLARE VARIABLE` Initialiser Enhancements

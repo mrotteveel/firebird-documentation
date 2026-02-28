@@ -1,14 +1,12 @@
 [#rnfb60-ddl]
 = Data Definition Language (DDL)
 
-[discrete#rnfb60-ddl-links]
-== Quick Links
-
+[#rnfb60-ddl-links]
+.Quick Links
 * <<rnfb60-ddl-drop-if-exists>>
 * <<rnfb60-ddl-alter-func-det>>
 * <<rnfb60-ddl-alter-sql-sec>>
 * <<rnfb60-ddl-createdb-owner>>
-// TODO: add links to sub-sections: <<rnfb60-ddl-id>>
 
 ////
 Generic template:

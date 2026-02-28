@@ -1,9 +1,8 @@
 [#rnfb60-msql]
 = Management Statements
 
-[discrete#rnfb60-msql-links]
-== Quick Links
-
+[#rnfb60-msql-links]
+.Quick Links
 * ...
 // TODO: add links to sub-sections: <<rnfb60-msql-id>>
 

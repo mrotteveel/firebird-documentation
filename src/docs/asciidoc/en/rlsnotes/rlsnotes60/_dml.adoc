@@ -1,11 +1,8 @@
 [#rnfb60-dml]
 = Data Manipulation Language (DML)
 
-[discrete#rnfb60-dml-links]
-== Quick Links
-
-* ...
-// TODO: add links to sub-sections: <<rnfb60-dml-id>>
+[#rnfb60-dml-links]
+.Quick Links
 * <<rnfb60-dml-built-in-functions>>
 ** <<rnfb60-dml-any-value>>
 ** ...
