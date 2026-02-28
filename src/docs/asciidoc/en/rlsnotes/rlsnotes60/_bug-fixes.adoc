@@ -60,6 +60,13 @@ _Fixed by Adriano dos Santos Fernandes_
 
 '''
 
+_https://github.com/FirebirdSQL/firebird/issues/7568[#7568]_
+-- Equivalence of Boolean condition in partial index
+
+_Fixed by Dmitry Yemanov_
+
+'''
+
 _https://github.com/FirebirdSQL/firebird/issues/7600[#7600]_
 -- `CASE` statement different result compared to Firebird 2.5.9
 
@@ -74,7 +81,7 @@ _Fixed by Adriano dos Santos Fernandes_
 
 '''
 
-_https://github.com/FirebirdSQL/firebird/issues/7924[#7924]
+_https://github.com/FirebirdSQL/firebird/issues/7924[#7924]_
 -- `ALTER TABLE ALTER COLUMN <text_field>` can not be changed properly in some cases
 
 _Fixed by Dimitry Sibiryakov_
