@@ -16,7 +16,7 @@ a|* Fixed typos and miscellaneous copy-editing.
 * Replaced duplicated text in <<fbconf-max-identifier-char-length>> with reference to <<fbconf-max-identifier-byte-length>>.
 * Made syntax descriptions more consistent.
 * Added explicit syntax descriptions to <<fbconf-firebird>>, <<fbconf-databases>>, and <<fbconf-trace>>.
-* Documented removal of `MaxIdentifierByteLength` and `MaxIdentifierCharLength` from Firebird 6
+* Documented removal of `MaxIdentifierByteLength`, `MaxIdentifierCharLength`, and `RelaxedAliasChecking` in Firebird 6
 
 |0.7
 |23-Dec-2025

@@ -9,6 +9,7 @@ Global
 .Availability
 [horizontal.compact]
 Deprecated:: 2.0
+Removed:: 6.0
 
 .Syntax
 [listing,subs=+quotes]
@@ -43,7 +44,7 @@ from EMPLOYEE as E
 This is intended as an interim workaround to be able to run legacy code which relies on the old behaviour.
 We recommend that you fix such code, so you don't rely on this workaround.
 
-There is no guarantee that this setting will be available in future Firebird versions.
+This configuration item has been removed in Firebird 6.0.
 ====
 
 .Example
