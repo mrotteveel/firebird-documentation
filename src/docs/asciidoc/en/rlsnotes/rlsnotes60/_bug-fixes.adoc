@@ -72,7 +72,14 @@ _https://github.com/FirebirdSQL/firebird/issues/7715[#7715]_
 
 _Fixed by Adriano dos Santos Fernandes_
 
-''''
+'''
+
+_https://github.com/FirebirdSQL/firebird/issues/7924[#7924]
+-- `ALTER TABLE ALTER COLUMN <text_field>` can not be changed properly in some cases
+
+_Fixed by Dimitry Sibiryakov_
+
+'''
 
 [#bug-600a1-util-isql]
 ==== isql
@@ -82,4 +89,4 @@ _https://github.com/FirebirdSQL/firebird/pull/187_[#187]
 
 _Fixed by Artyom Smirnov_
 
-''''
+'''
