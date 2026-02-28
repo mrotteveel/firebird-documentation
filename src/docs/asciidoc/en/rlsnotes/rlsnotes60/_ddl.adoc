@@ -4,6 +4,7 @@
 [discrete#rnfb60-ddl-links]
 == Quick Links
 
+* <<rnfb60-ddl-drop-if-exists>>
 * <<rnfb60-ddl-alter-func-det>>
 * <<rnfb60-ddl-alter-sql-sec>>
 * <<rnfb60-ddl-createdb-owner>>
@@ -35,6 +36,44 @@ Tracker ticket: https://github.com/FirebirdSQL/firebird/[pull/]<issue>[#<issue>]
 ----
 
 ////
+
+[#rnfb60-ddl-drop-if-exists]
+== `DROP ... [IF EXISTS]`
+Adriano dos Santos Fernandes
+
+Tracker ticket: https://github.com/FirebirdSQL/firebird/issues/4203[#4203]
+
+Using subclause `IF EXISTS`, it's now possible to try to drop objects and not get errors when they did not exist.
+
+.Supported statements
+[listing,subs=+quotes]
+----
+DROP EXCEPTION [IF EXISTS] _exception_
+DROP INDEX [IF EXISTS] _index-
+DROP PROCEDURE [IF EXISTS] _procedure_
+DROP TABLE [IF EXISTS] _table_
+DROP TRIGGER [IF EXISTS] _trigger_
+DROP VIEW [IF EXISTS] _view_
+DROP FILTER [IF EXISTS] _filter_
+DROP DOMAIN [IF EXISTS] _domain_
+DROP [EXTERNAL] FUNCTION [IF EXISTS] _function_
+DROP SHADOW [IF EXISTS] _shadow_
+DROP ROLE [IF EXISTS] _role_
+DROP GENERATOR [IF EXISTS] _generator_
+DROP SEQUENCE [IF EXISTS] _sequence_
+DROP COLLATION [IF EXISTS] _collation_
+DROP USER [IF EXISTS] _user_ [USING PLUGIN _plugin_]
+DROP PACKAGE [IF EXISTS] _package_
+DROP PACKAGE BODY [IF EXISTS] _package_
+DROP [GLOBAL] MAPPING [IF EXISTS] _mapping_
+DROP SCHEMA [IF EXISTS] _schema_
+ALTER TABLE _table_ DROP [COLUMN] [IF EXISTS] _column_
+ALTER TABLE _table_ DROP CONSTRAINT [IF EXISTS] <constraint>
+----
+
+For `ALTER TABLE ... DROP` subclauses, DDL triggers are not fired if there are only `DROP ... IF EXISTS` subclauses and none of the columns and constraints existed.
+
+For `DROP` statements with `IF EXISTS`, DDL triggers are not fired when the object did not exist.
 
 [#rnfb60-ddl-alter-func-det]
 == Alter `DETERMINISTIC` State of Functions

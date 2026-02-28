@@ -31,6 +31,10 @@ For more details, see <<rnfb60-section-id>>.
 [#rnfb60-60alpha1-complete]
 === Complete In Firebird 6.0 Alpha 1
 
+<<rnfb60-ddl-drop-if-exists,`DROP ... [IF EXISTS]`>>::
+https://github.com/FirebirdSQL/firebird/issues/4203[#4203]
+_by Adriano dos Santos Fernandes_
+
 <<rnfb60-ddl-alter-func-det,Alter `DETERMINISTIC` State of Functions>>::
 https://github.com/FirebirdSQL/firebird/7427[#7427]
 _by Alexander Zhdanov_
