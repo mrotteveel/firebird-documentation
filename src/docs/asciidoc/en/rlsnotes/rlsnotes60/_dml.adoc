@@ -5,6 +5,7 @@
 .Quick Links
 * <<rnfb60-dml-routine-call-default>>
 * <<rnfb60-dml-named-args>>
+* <<rnfb60-dml-call-stmt>>
 * <<rnfb60-dml-built-in-functions>>
 ** <<rnfb60-dml-any-value>>
 ** ...
@@ -110,6 +111,107 @@ execute procedure insert_customer(
 
 select *
 from get_customers(city_id => 10, last_name => 'SCHUMACHER');
+----
+
+[#rnfb60-dml-call-stmt]
+== `CALL` Statement for Executing Procedures
+Adriano dos Santos Fernandes
+
+Tracker ticket: https://github.com/FirebirdSQL/firebird/issues/7587[#7587]
+
+The `CALL` statement is similar to `EXECUTE PROCEDURE`, but allows the caller to only get specific output parameters, or none.
+
+.Syntax
+[listing,subs=+quotes]
+----
+CALL [ _schema_ . ] [ _package_ .] _procedure_ (<arguments>)
+
+<arguments> ::=
+    <positional arguments> |
+    [ <positional arguments> , ] <named arguments>
+
+<positional arguments> ::=
+    <value or default> [ { , <value or default> }... ]
+
+<named arguments> ::=
+    <named argument> [ { , <named argument> }... ]
+
+<named argument> ::=
+    _argument-name_ => <value or default>
+
+<value or default> ::= <value> | DEFAULT
+----
+
+When using positional arguments, output parameters follow after the input parameters.
+
+In DSQL, output parameters are specified using `?`.
+In PSQL, using the names of the target variables.
+
+To exclude an output parameter as a positional argument, pass `NULL`, or only reference the desired output parameters using named argument syntax.
+
+When used with selectable stored procedures, only the first row is returned, and the stored procedure exits after the first `SUSPEND`.
+This is the same behaviour as with `EXECUTE PROCEDURE`.
+
+.Examples
+[source]
+----
+set term #;
+create or alter procedure insert_customer (
+  last_name varchar(30),
+  first_name varchar(30))
+returns (
+  id integer,
+  full_name varchar(62))
+as
+begin
+  insert into customers (last_name, first_name)
+    values (:last_name, :first_name)
+    returning id, last_name || ', ' || first_name
+    into :id, :full_name;
+end#
+set term ;#
+
+-- Not all output parameters are necessary.
+call insert_customer(
+  'LECLERC',
+  'CHARLES',
+  ?);
+
+-- Ignore first output parameter (using NULL) and get the second.
+call insert_customer(
+  'LECLERC',
+  'CHARLES',
+  null,
+  ?);
+
+-- Ignore ID output parameter.
+call insert_customer(
+  'LECLERC',
+  'CHARLES',
+  full_name => ?);
+
+-- Pass inputs and get outputs using named arguments.
+call insert_customer(
+  last_name => 'LECLERC',
+  first_name => 'CHARLES',
+  last_name => ?,
+  id => ?);
+
+set term #;
+create or alter procedure do_something_and_insert_customer returns (
+  out_id integer,
+  out_full_name varchar(62))
+as
+  declare last_name varchar(30);
+  declare first_name varchar(30);
+begin
+  call insert_customer(
+    last_name,
+    first_name,
+    out_id,
+    full_name => out_full_name);
+end#
+set term ;#
 ----
 
 [#rnfb60-dml-built-in-functions]

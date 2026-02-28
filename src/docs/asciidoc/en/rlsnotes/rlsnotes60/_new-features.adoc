@@ -47,6 +47,10 @@ _by Adriano dos Santos Fernandes_
 https://github.com/FirebirdSQL/firebird/issues/7586[#7586]
 _by Adriano dos Santos Fernandes_
 
+<<rnfb60-dml-call-stmt,`CALL` Statement for Executing Procedures>>::
+https://github.com/FirebirdSQL/firebird/issues/7587[#7587]
+_by Adriano dos Santos Fernandes_
+
 <<rnfb60-psql-decl-var-init,Allow any expression as default value in `DECLARE VARIABLE`>>::
 https://github.com/FirebirdSQL/firebird/issues/7590[#7590]
 _by Adriano dos Santos Fernandes_
