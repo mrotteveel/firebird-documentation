@@ -27,6 +27,20 @@ System tables added in ODS 14.0:
 
 * ...
 
+[#rnfb60-apiods-overflow-header]
+=== Removal of Overflow Header Pages
+Dmitry Yemanov
+
+Tracker ticket: https://github.com/FirebirdSQL/firebird/pull/7975[#7975]
+
+The support for overflow header pages has been removed.
+
+Previous Firebird versions supported multiple header pages per database file.
+Such overflow header pages are allocated if stored clumplets do not fit the available header page space.
+However, this is practically impossible with the minimum page size of 8KB, even if we quadrupled the number of supported clumplet types.
+
+In struct `header_page`, the field `ULONG hdr_next_page` has been renamed to `hdr_unused`.
+
 [#rnfb60-apiods-api]
 == Application Programming Interfaces
 
